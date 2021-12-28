@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./scripts/main.js" type="module" defer></script>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/f870c7346d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Weather Api for The Odin Project</title>
+  </head>
+  <body>
+    <header class="main-header flex-container">
+      <div class="flex-vertical-center">
+        <h1 class="main-title">WEATHER FINDER</h1>
+      </div>
+
+      <div class="flex-vertical-center">
+        <div class="cont-top">
+          <label class="city" for="search"><h2>CITY</h2></label>
+          <input
+            name="search"
+            id="search-field"
+            type="text"
+            placeholder="Type here"
+          />
+        </div>
+        <button id="enter"><h2>SUBMIT</h2></button>
+      </div>
+    </header>
+
+    <section class="display-weather">
+      <h1 class="Location">Ottawa, Ontario</h1>
+      <div class="flex-container">
+        <div class="flex">
+          <div class="degrees">
+            <h1>10° C</h1>
+            <i class="fas fa-cloud"></i>
+          </div>
+          <div class="feels-like">
+            <p>Feels like -</p>
+            <span>12</span>
+          </div>
+          <div class="high">
+            <p>High -</p>
+            <span>14</span>
+          </div>
+          <div class="low">
+            <p>Low -</p>
+            <span>3</span>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="humidity">
+            <p>Humidity -</p>
+            <span>90</span>
+          </div>
+          <div class="wind">
+            <p>Wind -</p>
+            <span>5</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather";
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+header.main-header {
+  background-color: #34113f;
+  height: 90px;
+}
+
+.main-title {
+  height: 60px;
+  background-color: #d4f2d2;
+  border-radius: 0.5rem;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  line-height: 60px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex {
+  flex: 1;
+}
+
+.flex-vertical-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.city,
+#search-field,
+#enter {
+  height: 50px;
+  background-color: #d4f2d2;
+  width: 150px;
+  border: 1px solid black;
+  margin: auto 0;
+  border-radius: 0.5rem;
+  text-align: center;
+  display: inline-block;
+}
+
+.city {
+  line-height: 50px;
+}
+
+.cont-top {
+  margin: auto 0;
+  width: 400px;
+  background-color: #beb7df;
+  height: 50px;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+}
+
+input {
+  margin: 0px !important;
+}
+
+#search-field {
+  position: relative;
+  top: -3px;
+  border: none;
+  outline: none;
+  width: 180px;
+  border-radius: 0 0.5rem 0.5rem 0;
+  background-color: #beb7df;
+  font-size: 18px;
+}
+
+#search-field::placeholder {
+  font-size: 16px;
+  color: #34113f;
+  opacity: 0.6;
+}
+
+#enter {
+  border-radius: 0;
+}

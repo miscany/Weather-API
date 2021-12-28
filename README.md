@@ -1,2 +1,2 @@
 # Weather-API
-Challenge for The Odin Project 'Javascript'
+For The Odin Project 'Javascript'
