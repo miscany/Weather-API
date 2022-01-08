@@ -1,5 +1,5 @@
 import { WEATHER_API_KEY, kelvin } from "./variables.js";
-import { weatherCall } from "./functions.js";
+import { weatherCall, displayWeather, displayFalse } from "./functions.js";
 
 // Variables
 const enterBtn = document.getElementById("enter"),

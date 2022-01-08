@@ -52,6 +52,10 @@ header.main-header {
   display: inline-block;
 }
 
+.degrees span {
+  font-size: 3.5rem !important;
+}
+
 .city {
   line-height: 50px;
 }
@@ -88,4 +92,45 @@ input {
 
 #enter {
   border-radius: 0;
+  cursor: pointer;
+}
+
+#enter:hover {
+  background-color: #aba9bf;
+}
+
+#enter:active {
+  color: white;
+}
+
+section.display-weather {
+  background-color: #34113f;
+  width: 800px;
+  height: 400px;
+  border-radius: 0.5rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 1rem 2rem 2rem;
+}
+
+section.display-weather h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+section.display-weather .flex-container .flex-container h1 {
+  font-size: 3.5rem;
+}
+
+section.display-weather .flex-container .flex-container > * {
+  flex: 1;
+}
+
+section.display-weather .flex-container .flex-container p,
+section.display-weather .flex-container .flex-container span {
+  font-size: 1.3rem;
 }
