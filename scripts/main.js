@@ -12,8 +12,9 @@ const enterBtn = document.getElementById("enter"),
 enterBtn.addEventListener("click", () => {
   weatherCall(inputField.value).then((response) => {
     if (response == false) {
-      displayFalse();
+      displayFalse(true);
     } else {
+      displayFalse(false);
       displayWeather(response);
     }
   });
