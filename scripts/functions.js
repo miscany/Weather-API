@@ -3,7 +3,17 @@ import { WEATHER_API_KEY, kelvin } from "./variables.js";
 export function kelvinCelsius(degree) {
   return Math.round(degree - 273.15);
 }
-export function displayWeather(data) {
+
+export async function weatherState(data) {
+  const icon = data.weather[0].icon;
+  return await fetch(`https://openweathermap.org/img/wn/04n@2x.png`)
+    .then((res) => res.blob())
+    .then((data) => {
+      const url = URL.createObjectURL(data);
+      document.getElementById("weather-icon").src = url;
+    });
+}
+export async function displayWeather(data) {
   // Extract values from api
   const temp = kelvinCelsius(data.main.temp),
     feelsLike = kelvinCelsius(data.main.feels_like),
@@ -18,8 +28,10 @@ export function displayWeather(data) {
     highElem = document.querySelector(".high span"),
     lowElem = document.querySelector(".low span"),
     humidityElem = document.querySelector(".humidity span"),
-    windElem = document.querySelector(".wind span");
+    windElem = document.querySelector(".wind span"),
+    weatherIcon = document.querySelector("#weather-icon");
 
+  weatherState(data);
   // Set elements value
   tempElem.innerText = temp;
   feelsLikeElem.innerText = feelsLike + "° C";
