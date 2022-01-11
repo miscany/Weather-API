@@ -103,6 +103,19 @@ input {
   color: white;
 }
 
+.error {
+  position: relative;
+  color: red;
+  background-color: black;
+  display: inline-block;
+  padding: 5px;
+  transform: translateX(75%);
+}
+
+.error p {
+  display: inline-block;
+}
+
 section.display-weather {
   background-color: #34113f;
   width: 800px;

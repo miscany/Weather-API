@@ -5,11 +5,14 @@ export function kelvinCelsius(degree) {
 }
 
 export async function weatherState(data) {
+  console.log(data);
   const icon = data.weather[0].icon;
+  console.log(icon);
   return await fetch(`https://openweathermap.org/img/wn/${icon}@2x.png`)
     .then((res) => res.blob())
     .then((data) => {
       const url = URL.createObjectURL(data);
+
       document.getElementById("weather-icon").src = url;
     });
 }
@@ -45,7 +48,14 @@ export async function displayWeather(data) {
   windElem.innerText = wind;
 }
 
-export function displayFalse() {}
+export function displayFalse(state) {
+  let errorElem = document.querySelector(".error");
+  if (state == true) {
+    errorElem.style.display = "inline-block";
+  } else {
+    errorElem.style.display = "none";
+  }
+}
 export async function weatherCall(city) {
   return await fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${WEATHER_API_KEY}`
