@@ -6,7 +6,7 @@ export function kelvinCelsius(degree) {
 
 export async function weatherState(data) {
   const icon = data.weather[0].icon;
-  return await fetch(`https://openweathermap.org/img/wn/04n@2x.png`)
+  return await fetch(`https://openweathermap.org/img/wn/${icon}@2x.png`)
     .then((res) => res.blob())
     .then((data) => {
       const url = URL.createObjectURL(data);
@@ -15,7 +15,8 @@ export async function weatherState(data) {
 }
 export async function displayWeather(data) {
   // Extract values from api
-  const temp = kelvinCelsius(data.main.temp),
+  const location = data.name,
+    temp = kelvinCelsius(data.main.temp),
     feelsLike = kelvinCelsius(data.main.feels_like),
     high = kelvinCelsius(data.main.temp_max),
     low = kelvinCelsius(data.main.temp_min),
@@ -23,7 +24,8 @@ export async function displayWeather(data) {
     wind = data.wind.speed; //?
 
   // Get elements from page
-  const tempElem = document.querySelector(".degrees h1 span"),
+  const locationElem = document.querySelector(".location"),
+    tempElem = document.querySelector(".degrees h1 span"),
     feelsLikeElem = document.querySelector(".feels-like span"),
     highElem = document.querySelector(".high span"),
     lowElem = document.querySelector(".low span"),
@@ -32,7 +34,9 @@ export async function displayWeather(data) {
     weatherIcon = document.querySelector("#weather-icon");
 
   weatherState(data);
+
   // Set elements value
+  locationElem.innerText = location;
   tempElem.innerText = temp;
   feelsLikeElem.innerText = feelsLike + "° C";
   highElem.innerText = high + "° C";

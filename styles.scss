@@ -136,3 +136,9 @@ section.display-weather {
     }
   }
 }
+
+img#weather-icon {
+  width: 10px !important;
+  position: relative;
+  transform: translateY(-25%);
+}
